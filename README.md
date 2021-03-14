@@ -22,4 +22,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Reference
 
-https://medium.com/swlh/build-a-date-picker-in-15mins-using-javascript-react-from-scratch-f6932c77db09
+> https://calendars.wikia.org/wiki/Calculating_the_day_of_the_week
+> https://medium.com/swlh/build-a-date-picker-in-15mins-using-javascript-react-from-scratch-f6932c77db09
