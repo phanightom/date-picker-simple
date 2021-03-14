@@ -1,4 +1,6 @@
-import '../styles/globals.css'
+import React from 'react';
+import '../styles/globals.css';
+import '../styles/datepicker.css'
 import { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {

@@ -1,9 +1,13 @@
+import React from 'react';
 import Layout from 'components/Layout';
+import DatePicker from 'components/DatePicker';
 
 const Home = () => {
   return (
     <Layout>
-      Home Page
+      <DatePicker
+        onChange={(d) => {console.log(d)}}
+      />
     </Layout>
   )
 }
