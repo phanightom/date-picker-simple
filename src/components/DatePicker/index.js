@@ -24,7 +24,9 @@ const DatePicker = (props) => {
   const inputRef = createRef()
   const [state, dispatch] = useReducer(reducer, initialState)
   const [showDatePicker, setShowDatePicker] = useState(false)
-  const [calandarStatus, setCalandarStatus] = useState(0) /* | 0 -> origin,  1 -> Month | */
+  const [calandarStatus, setCalandarStatus] = useState(0)
+  const isOriginCalandar = calandarStatus === 0;
+  const isMonthCalandar = calandarStatus === 1;
 
   const setDateToInput = (timestamp) => {
     const dateString = getDateStringFromTimestamp(timestamp)
@@ -163,7 +165,7 @@ const DatePicker = (props) => {
               <div
                 className='mdpchb-inner'
                 onClick={() => {
-                  if (calandarStatus === 0) {
+                  if (isOriginCalandar) {
                     setMonth(-1)
                   } else {
                     setYear(-1)
@@ -175,9 +177,9 @@ const DatePicker = (props) => {
             </div>
             <div className='mdpch-container'>
               <div onClick={() => { setCalandarStatus(1) }}>
-                <div className='mdpchc-year'>{state.year}</div>
+                <div className={`mdpchc-year ${isMonthCalandar ? 'mdpchc-year-vertical' : ''}`}>{state.year}</div>
                 {
-                  calandarStatus === 0 && (
+                  isOriginCalandar && (
                     <div className='mdpchc-month'>{getMonthStr(state.month)}</div>
                   )
                 }
@@ -187,7 +189,7 @@ const DatePicker = (props) => {
               <div
                 className='mdpchb-inner'
                 onClick={() => {
-                  if (calandarStatus === 0) {
+                  if (isOriginCalandar) {
                     setMonth(1)
                   } else {
                     setYear(1)
@@ -199,8 +201,8 @@ const DatePicker = (props) => {
             </div>
           </div>
           <div className='mdpc-body'>
-            {calandarStatus === 0 && calendarMarkup}
-            {calandarStatus === 1 && calendarMonthMarkup}
+            {isOriginCalandar && calendarMarkup}
+            {isMonthCalandar && calendarMonthMarkup}
           </div>
         </div>
       ) : ''}

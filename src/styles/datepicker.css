@@ -158,6 +158,11 @@
   font-weight: 200px;
   text-align: center;
 }
+
+.mdpchc-year-vertical {
+  margin-top: 5px;
+}
+
 .mdpchc-month{
   float: left;
   width: 100%;
